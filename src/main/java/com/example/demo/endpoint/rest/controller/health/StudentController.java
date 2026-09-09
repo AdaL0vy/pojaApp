@@ -6,19 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 public class StudentController {
-    private StudentService studentService;
+  private StudentService studentService;
 
-    @GetMapping("/students")
-
-    public Student studentById(@PathVariable String id){
-        return studentService.getStudentById(id);
-
-    }
-
-
-
-
+  @GetMapping("/students")
+  public Student studentById(@PathVariable String id) {
+    return studentService.getStudentById(id);
+  }
 }

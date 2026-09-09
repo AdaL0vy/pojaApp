@@ -1,25 +1,20 @@
 package com.example.demo.service;
 
-
 import com.example.demo.entity.Student;
 import com.example.demo.repository.StudentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
+import org.springframework.stereotype.Service;
 
 @Service
 public class StudentService {
 
-    private StudentRepository studentRepository;
+  private StudentRepository studentRepository;
 
+  public List<Student> getAllStudent() {
+    return studentRepository.findAll();
+  }
 
-    public List<Student> getAllStudent(){
-        return studentRepository.findAll();
-    }
-
-    public Student getStudentById(String id){
-        return studentRepository.getReferenceById(id);
-    }
-
+  public Student getStudentById(String id) {
+    return studentRepository.getReferenceById(id);
+  }
 }
