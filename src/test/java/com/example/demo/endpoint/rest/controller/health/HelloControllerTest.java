@@ -8,6 +8,6 @@ class HelloControllerTest {
 
   @Test
   void hello() {
-    assertEquals("...World!!!", new HelloController().HelloWorld());
+    assertEquals("...World!!", new HelloController().HelloWorld());
   }
 }
