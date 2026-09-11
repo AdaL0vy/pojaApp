@@ -1,0 +1,28 @@
+openapi: 3.0.3
+info:
+  title: Student management API
+  description: API for Student management
+  version: 1.0.0
+
+  #Alaina any am POJA ny url
+servers:
+  - url: http://localhost:8080
+
+tags:
+  - name : Students
+    description: Operation related to Student
+
+paths:
+  /students:
+    get:
+      tags:
+        - Students
+      responses:
+        '200':
+          description: List of Student returned
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: #/components/schemas/
