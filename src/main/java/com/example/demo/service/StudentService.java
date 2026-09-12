@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.Student;
+import com.example.demo.handler.exception.NoStudentInTheDatabaseException;
 import com.example.demo.handler.exception.StudentNotCreatedException;
 import com.example.demo.handler.exception.StudentNotFoundException;
 import com.example.demo.repository.StudentRepository;
@@ -13,6 +14,9 @@ public class StudentService {
   private StudentRepository studentRepository;
 
   public List<Student> getAllStudent() {
+    if (studentRepository.findAll().isEmpty()) {
+      throw new NoStudentInTheDatabaseException("No student in the database");
+    }
     return studentRepository.findAll();
   }
 
