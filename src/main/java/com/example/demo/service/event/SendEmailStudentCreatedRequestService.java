@@ -12,7 +12,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class SendEmailStudentCreatedService implements Consumer<SendEmailStudentCreatedRequest> {
+public class SendEmailStudentCreatedRequestService
+    implements Consumer<SendEmailStudentCreatedRequest> {
   private final Mailer mailer;
 
   @SneakyThrows
