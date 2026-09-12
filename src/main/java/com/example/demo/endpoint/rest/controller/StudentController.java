@@ -1,4 +1,4 @@
-package com.example.demo.endpoint.rest.controller.health;
+package com.example.demo.endpoint.rest.controller;
 
 import com.example.demo.entity.Student;
 import com.example.demo.service.StudentService;

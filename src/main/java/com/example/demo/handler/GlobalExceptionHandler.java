@@ -1,6 +1,5 @@
 package com.example.demo.handler;
 
-import com.example.demo.handler.exception.NoStudentInTheDatabaseException;
 import com.example.demo.handler.exception.StudentNotCreatedException;
 import com.example.demo.handler.exception.StudentNotFoundException;
 import org.springframework.http.HttpStatus;
@@ -23,12 +22,5 @@ public class GlobalExceptionHandler {
     ErrorResponse errorResponse =
         ErrorResponse.create(ex, HttpStatus.FORBIDDEN, "Student not created");
     return ResponseEntity.status(HttpStatus.FORBIDDEN).body(errorResponse);
-  }
-
-  @ExceptionHandler(NoStudentInTheDatabaseException.class)
-  public ResponseEntity<ErrorResponse> emptyStudentList(NoStudentInTheDatabaseException ex) {
-    ErrorResponse errorResponse =
-        ErrorResponse.create(ex, HttpStatus.NOT_FOUND, "No student found");
-    return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
   }
 }
