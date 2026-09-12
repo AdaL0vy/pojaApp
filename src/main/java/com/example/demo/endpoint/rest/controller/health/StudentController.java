@@ -3,9 +3,11 @@ package com.example.demo.endpoint.rest.controller.health;
 import com.example.demo.entity.Student;
 import com.example.demo.service.StudentService;
 import java.util.List;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/students")
 public class StudentController {
   private StudentService studentService;
@@ -21,7 +23,7 @@ public class StudentController {
   }
 
   @PostMapping
-  public Student saveStudent(@RequestParam Student student) {
+  public Student saveStudent(@RequestBody Student student) {
     return studentService.createStudent(student);
   }
 }
