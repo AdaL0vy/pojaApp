@@ -1,10 +1,17 @@
 package com.example.demo.entity;
 
-import lombok.Builder;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.*;
 
 @Builder
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class Student {
-  public String id;
+  @Id public String id;
   public String firstName;
   public String lastName;
 }
