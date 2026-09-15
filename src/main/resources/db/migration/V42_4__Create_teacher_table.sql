@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS TEACHER (id varchar(50), name varchar(50));
